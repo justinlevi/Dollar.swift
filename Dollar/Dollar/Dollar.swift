@@ -573,7 +573,7 @@ public class $ {
     /// :param separator The separator to join the elements with.
     /// :return Joined element from the array of elements.
     public class func join(strArray: [String], separator: String) -> String {
-        return separator.join(strArray)
+        return strArray.joinWithSeparator(separator)
     }
     
     /// Creates an array of keys given a dictionary.
@@ -961,7 +961,7 @@ public class $ {
     /// :param incrementBy Increment sequence by.
     /// :return Array of elements based on the sequence.
     public class func range<T : Strideable>(from startVal: T, to endVal: T, incrementBy: T.Stride) -> [T] {
-        let range = Swift.stride(from: startVal, to: endVal, by: incrementBy)
+        let range = startVal.stride(to: endVal, by: incrementBy)
         return self.sequence(range)
     }
     
